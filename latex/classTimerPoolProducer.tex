@@ -1,0 +1,445 @@
+\hypertarget{classTimerPoolProducer}{\section{\-Timer\-Pool\-Producer \-Class \-Reference}
+\label{classTimerPoolProducer}\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}}
+}
+
+
+{\ttfamily \#include $<$\-Timer\-Pool\-Producer.\-h$>$}
+
+
+
+\-Collaboration diagram for \-Timer\-Pool\-Producer\-:
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTimerPoolProducer_a1c5230341adf77ea623817fc8aed4d2d}{\-Timer\-Pool\-Producer} (\hyperlink{classSynchronisedQueue}{\-Synchronised\-Queue}$<$ \hyperlink{classModul}{\-Modul} $\ast$ $>$ $\ast$queue)
+\item 
+\hyperlink{classTimerPoolProducer_a84c1edeb70b7a0d00d832ee9221af53d}{$\sim$\-Timer\-Pool\-Producer} ()
+\item 
+void \hyperlink{classTimerPoolProducer_a4e2babcd8ca46c64482929df58c2609c}{attach} (\hyperlink{classModul}{\-Modul} $\ast$product)
+\item 
+void \hyperlink{classTimerPoolProducer_adaac18d6c1cf1a6219c393879e026076}{detach} (\hyperlink{classModul}{\-Modul} $\ast$product)
+\item 
+void \hyperlink{classTimerPoolProducer_af72ce21fe82ca390d6933dc3cf2a433e}{\-Notify} ()
+\item 
+void \hyperlink{classTimerPoolProducer_a765a24710022eca32c9a446f575f9a8d}{\-Add\-Timer\-Pool} ()
+\item 
+void \hyperlink{classTimerPoolProducer_abd7029bf92e829eae0264b9abeb1184f}{\-Add\-Timer} (long long \-Timer\-Intervall)
+\item 
+boost\-::thread\-::id \hyperlink{classTimerPoolProducer_a551646d28abe29b451e1bcca031b7c8a}{\-Add\-Timer\-Thread} (long long \-Timer\-Intervall)
+\item 
+void \hyperlink{classTimerPoolProducer_ab6a97601109a1857bd2f58496cf9015a}{\-Stop\-One\-Timer\-Thread} (boost\-::thread\-::id thread\-Id)
+\item 
+void \hyperlink{classTimerPoolProducer_ab6bea328d23424335964ffbda6acef3a}{\-Stop\-All\-Timer\-Thread} ()
+\item 
+void \hyperlink{classTimerPoolProducer_a1b21ebcf38f8a2fb049bafee81776d04}{\-Stop\-Timer} (int n)
+\item 
+void \hyperlink{classTimerPoolProducer_a681e4af4f6cbd9c3fa5f2c60a031ba62}{\-Stop\-All\-Timer} ()
+\item 
+void \hyperlink{classTimerPoolProducer_a1684543a38e60b57de8505072a3eae2f}{\-Interrupall\-Timer} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTimerPoolProducer_aaa466ecb380111ab58a8dbdd2a6de2e0}{\-Loop\-Timer} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ \hyperlink{classModul}{\-Modul} $\ast$ $>$ \hyperlink{classTimerPoolProducer_a8f115a7a158c1a87b7c0b69979056a58}{productset}
+\item 
+\hyperlink{classModul}{\-Modul} $\ast$ \hyperlink{classTimerPoolProducer_ad592323c1d91c4a8e05d44f71b84dfe4}{myproduct}
+\item 
+volatile bool \hyperlink{classTimerPoolProducer_a0819a9b4ae21ef164a7953308a6eba32}{\-\_\-\-Loop\-State}
+\item 
+boost\-::thread $\ast$ \hyperlink{classTimerPoolProducer_a769349d783a28489a9a2fa5809bb3e1c}{mythread}
+\item 
+boost\-::thread\-\_\-group \hyperlink{classTimerPoolProducer_a1c409ced920df021ed0d05965a42283d}{threadgroup}
+\item 
+int \hyperlink{classTimerPoolProducer_a414c9db407fb14cb1f0693951730567d}{\-\_\-\-Time\-Intervall}
+\item 
+boost\-::mutex \hyperlink{classTimerPoolProducer_aea1db7284a5712c3f10d20311a46a273}{\-Loop\-\_\-mutex}
+\item 
+boost\-::shared\-\_\-ptr$<$ boost\-::thread $>$ \hyperlink{classTimerPoolProducer_a26517aaf30ea382756cca86b719e07ea}{\-\_\-m\-Thread}
+\item 
+std\-::map$<$ int, \*
+boost\-::shared\-\_\-ptr\*
+$<$ boost\-::thread $>$ $>$ \hyperlink{classTimerPoolProducer_a2c4d13b344f41f350c195a113ed59d7a}{\-Threadlist}
+\item 
+std\-::map$<$ \hyperlink{classModul}{\-Modul} $\ast$, map\*
+$<$ \hyperlink{classTimerPoolProducer}{\-Timer\-Pool\-Producer} \*
+$\ast$, boost\-::shared\-\_\-ptr\*
+$<$ boost\-::thread $>$ $>$ $>$ \hyperlink{classTimerPoolProducer_ac578fc91c74fa55190cd661fc892b8cc}{m\-Threadlist}
+\item 
+\hyperlink{classSynchronisedQueue}{\-Synchronised\-Queue}$<$ \hyperlink{classModul}{\-Modul} $\ast$ $>$ $\ast$ \hyperlink{classTimerPoolProducer_a1706efbc1e1a37f6fa05efb3fe5879f7}{m\-\_\-queue}
+\item 
+std\-::map$<$ boost\-::thread\-::id, \*
+boost\-::shared\-\_\-ptr\*
+$<$ boost\-::thread $>$ $>$ \hyperlink{classTimerPoolProducer_a5d112fbb99940e2e38d94ece39878cbd}{\-Timer\-Threadmap}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+
+
+\-Definition at line 51 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classTimerPoolProducer_a1c5230341adf77ea623817fc8aed4d2d}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}}
+\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Timer\-Pool\-Producer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Timer\-Pool\-Producer\-::\-Timer\-Pool\-Producer} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Synchronised\-Queue}$<$ {\bf \-Modul} $\ast$ $>$ $\ast$}]{queue}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a1c5230341adf77ea623817fc8aed4d2d}
+\-My constructor. \-Initializes the \-Synchronised queue. 
+\begin{DoxyParams}{\-Parameters}
+{\em queue} & \-Point of queue \\
+\hline
+\end{DoxyParams}
+
+
+\-Definition at line 9 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References m\-\_\-queue.
+
+\hypertarget{classTimerPoolProducer_a84c1edeb70b7a0d00d832ee9221af53d}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!$\sim$\-Timer\-Pool\-Producer@{$\sim$\-Timer\-Pool\-Producer}}
+\index{$\sim$\-Timer\-Pool\-Producer@{$\sim$\-Timer\-Pool\-Producer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{$\sim$\-Timer\-Pool\-Producer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Timer\-Pool\-Producer\-::$\sim$\-Timer\-Pool\-Producer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a84c1edeb70b7a0d00d832ee9221af53d}
+\-Default destructor. 
+
+\-Definition at line 14 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classTimerPoolProducer_abd7029bf92e829eae0264b9abeb1184f}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Add\-Timer@{\-Add\-Timer}}
+\index{\-Add\-Timer@{\-Add\-Timer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Add\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Add\-Timer} (
+\begin{DoxyParamCaption}
+\item[{long long}]{\-Timer\-Intervall}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_abd7029bf92e829eae0264b9abeb1184f}
+\-My function doing something... 
+\begin{DoxyParams}{\-Parameters}
+{\em param1} & first parameter \\
+\hline
+{\em param2} & second parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+value return void 
+\end{DoxyReturn}
+
+
+\-Definition at line 41 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Time\-Intervall, \-Loop\-Timer(), and \-Threadlist.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classTimerPoolProducer_a765a24710022eca32c9a446f575f9a8d}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Add\-Timer\-Pool@{\-Add\-Timer\-Pool}}
+\index{\-Add\-Timer\-Pool@{\-Add\-Timer\-Pool}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Add\-Timer\-Pool}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Add\-Timer\-Pool} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a765a24710022eca32c9a446f575f9a8d}
+\hypertarget{classTimerPoolProducer_a551646d28abe29b451e1bcca031b7c8a}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Add\-Timer\-Thread@{\-Add\-Timer\-Thread}}
+\index{\-Add\-Timer\-Thread@{\-Add\-Timer\-Thread}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Add\-Timer\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::thread\-::id {\bf \-Timer\-Pool\-Producer\-::\-Add\-Timer\-Thread} (
+\begin{DoxyParamCaption}
+\item[{long long}]{\-Timer\-Intervall}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a551646d28abe29b451e1bcca031b7c8a}
+
+
+\-Definition at line 57 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Time\-Intervall, \-Loop\-Timer(), and \-Timer\-Threadmap.
+
+
+
+\-Here is the call graph for this function\-:
+
+
+\hypertarget{classTimerPoolProducer_a4e2babcd8ca46c64482929df58c2609c}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!attach@{attach}}
+\index{attach@{attach}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::attach} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Modul} $\ast$}]{product}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a4e2babcd8ca46c64482929df58c2609c}
+
+
+\-Definition at line 16 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References productset.
+
+\hypertarget{classTimerPoolProducer_adaac18d6c1cf1a6219c393879e026076}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!detach@{detach}}
+\index{detach@{detach}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::detach} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Modul} $\ast$}]{product}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_adaac18d6c1cf1a6219c393879e026076}
+
+
+\-Definition at line 21 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References productset.
+
+\hypertarget{classTimerPoolProducer_a1684543a38e60b57de8505072a3eae2f}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Interrupall\-Timer@{\-Interrupall\-Timer}}
+\index{\-Interrupall\-Timer@{\-Interrupall\-Timer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Interrupall\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Interrupall\-Timer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a1684543a38e60b57de8505072a3eae2f}
+
+
+\-Definition at line 149 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Loop\-State.
+
+\hypertarget{classTimerPoolProducer_aaa466ecb380111ab58a8dbdd2a6de2e0}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Loop\-Timer@{\-Loop\-Timer}}
+\index{\-Loop\-Timer@{\-Loop\-Timer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Loop\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Loop\-Timer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_aaa466ecb380111ab58a8dbdd2a6de2e0}
+
+
+\-Definition at line 156 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Loop\-State, \-\_\-\-Time\-Intervall, \-Synchronised\-Queue$<$ T $>$\-::\-Enqueue(), m\-\_\-queue, and productset.
+
+
+
+\-Referenced by \-Add\-Timer(), and \-Add\-Timer\-Thread().
+
+
+
+\-Here is the call graph for this function\-:
+
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classTimerPoolProducer_af72ce21fe82ca390d6933dc3cf2a433e}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Notify@{\-Notify}}
+\index{\-Notify@{\-Notify}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Notify}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Notify} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_af72ce21fe82ca390d6933dc3cf2a433e}
+
+
+\-Definition at line 28 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References productset.
+
+\hypertarget{classTimerPoolProducer_a681e4af4f6cbd9c3fa5f2c60a031ba62}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Stop\-All\-Timer@{\-Stop\-All\-Timer}}
+\index{\-Stop\-All\-Timer@{\-Stop\-All\-Timer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Stop\-All\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Stop\-All\-Timer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a681e4af4f6cbd9c3fa5f2c60a031ba62}
+
+
+\-Definition at line 141 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Loop\-State.
+
+\hypertarget{classTimerPoolProducer_ab6bea328d23424335964ffbda6acef3a}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Stop\-All\-Timer\-Thread@{\-Stop\-All\-Timer\-Thread}}
+\index{\-Stop\-All\-Timer\-Thread@{\-Stop\-All\-Timer\-Thread}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Stop\-All\-Timer\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Stop\-All\-Timer\-Thread} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_ab6bea328d23424335964ffbda6acef3a}
+
+
+\-Definition at line 94 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Loop\-State, and \-Timer\-Threadmap.
+
+\hypertarget{classTimerPoolProducer_ab6a97601109a1857bd2f58496cf9015a}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Stop\-One\-Timer\-Thread@{\-Stop\-One\-Timer\-Thread}}
+\index{\-Stop\-One\-Timer\-Thread@{\-Stop\-One\-Timer\-Thread}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Stop\-One\-Timer\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Stop\-One\-Timer\-Thread} (
+\begin{DoxyParamCaption}
+\item[{boost\-::thread\-::id}]{thread\-Id}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_ab6a97601109a1857bd2f58496cf9015a}
+
+
+\-Definition at line 68 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-Timer\-Threadmap.
+
+\hypertarget{classTimerPoolProducer_a1b21ebcf38f8a2fb049bafee81776d04}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Stop\-Timer@{\-Stop\-Timer}}
+\index{\-Stop\-Timer@{\-Stop\-Timer}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Stop\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-Timer\-Pool\-Producer\-::\-Stop\-Timer} (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{classTimerPoolProducer_a1b21ebcf38f8a2fb049bafee81776d04}
+
+
+\-Definition at line 113 of file \-Timer\-Pool\-Producer.\-cpp.
+
+
+
+\-References \-\_\-\-Loop\-State, and \-Threadlist.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classTimerPoolProducer_a0819a9b4ae21ef164a7953308a6eba32}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-\_\-\-Loop\-State@{\-\_\-\-Loop\-State}}
+\index{\-\_\-\-Loop\-State@{\-\_\-\-Loop\-State}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-\_\-\-Loop\-State}]{\setlength{\rightskip}{0pt plus 5cm}volatile bool {\bf \-Timer\-Pool\-Producer\-::\-\_\-\-Loop\-State}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a0819a9b4ae21ef164a7953308a6eba32}
+
+
+\-Definition at line 78 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\-Referenced by \-Interrupall\-Timer(), \-Loop\-Timer(), \-Stop\-All\-Timer(), \-Stop\-All\-Timer\-Thread(), and \-Stop\-Timer().
+
+\hypertarget{classTimerPoolProducer_a26517aaf30ea382756cca86b719e07ea}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-\_\-m\-Thread@{\-\_\-m\-Thread}}
+\index{\-\_\-m\-Thread@{\-\_\-m\-Thread}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-\_\-m\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::shared\-\_\-ptr$<$boost\-::thread$>$ {\bf \-Timer\-Pool\-Producer\-::\-\_\-m\-Thread}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a26517aaf30ea382756cca86b719e07ea}
+
+
+\-Definition at line 84 of file \-Timer\-Pool\-Producer.\-h.
+
+\hypertarget{classTimerPoolProducer_a414c9db407fb14cb1f0693951730567d}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-\_\-\-Time\-Intervall@{\-\_\-\-Time\-Intervall}}
+\index{\-\_\-\-Time\-Intervall@{\-\_\-\-Time\-Intervall}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-\_\-\-Time\-Intervall}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf \-Timer\-Pool\-Producer\-::\-\_\-\-Time\-Intervall}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a414c9db407fb14cb1f0693951730567d}
+
+
+\-Definition at line 82 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\-Referenced by \-Add\-Timer(), \-Add\-Timer\-Thread(), and \-Loop\-Timer().
+
+\hypertarget{classTimerPoolProducer_aea1db7284a5712c3f10d20311a46a273}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Loop\-\_\-mutex@{\-Loop\-\_\-mutex}}
+\index{\-Loop\-\_\-mutex@{\-Loop\-\_\-mutex}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Loop\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::mutex {\bf \-Timer\-Pool\-Producer\-::\-Loop\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_aea1db7284a5712c3f10d20311a46a273}
+
+
+\-Definition at line 83 of file \-Timer\-Pool\-Producer.\-h.
+
+\hypertarget{classTimerPoolProducer_a1706efbc1e1a37f6fa05efb3fe5879f7}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!m\-\_\-queue@{m\-\_\-queue}}
+\index{m\-\_\-queue@{m\-\_\-queue}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{m\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Synchronised\-Queue}$<${\bf \-Modul}$\ast$$>$$\ast$ {\bf \-Timer\-Pool\-Producer\-::m\-\_\-queue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a1706efbc1e1a37f6fa05efb3fe5879f7}
+
+
+\-Definition at line 89 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\-Referenced by \-Loop\-Timer(), and \-Timer\-Pool\-Producer().
+
+\hypertarget{classTimerPoolProducer_ac578fc91c74fa55190cd661fc892b8cc}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!m\-Threadlist@{m\-Threadlist}}
+\index{m\-Threadlist@{m\-Threadlist}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{m\-Threadlist}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<${\bf \-Modul}$\ast$,map$<${\bf \-Timer\-Pool\-Producer}$\ast$,boost\-::shared\-\_\-ptr$<$boost\-::thread$>$ $>$ $>$ {\bf \-Timer\-Pool\-Producer\-::m\-Threadlist}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_ac578fc91c74fa55190cd661fc892b8cc}
+
+
+\-Definition at line 87 of file \-Timer\-Pool\-Producer.\-h.
+
+\hypertarget{classTimerPoolProducer_ad592323c1d91c4a8e05d44f71b84dfe4}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!myproduct@{myproduct}}
+\index{myproduct@{myproduct}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{myproduct}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Modul}$\ast$ {\bf \-Timer\-Pool\-Producer\-::myproduct}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_ad592323c1d91c4a8e05d44f71b84dfe4}
+
+
+\-Definition at line 77 of file \-Timer\-Pool\-Producer.\-h.
+
+\hypertarget{classTimerPoolProducer_a769349d783a28489a9a2fa5809bb3e1c}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!mythread@{mythread}}
+\index{mythread@{mythread}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{mythread}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::thread$\ast$ {\bf \-Timer\-Pool\-Producer\-::mythread}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a769349d783a28489a9a2fa5809bb3e1c}
+
+
+\-Definition at line 80 of file \-Timer\-Pool\-Producer.\-h.
+
+\hypertarget{classTimerPoolProducer_a8f115a7a158c1a87b7c0b69979056a58}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!productset@{productset}}
+\index{productset@{productset}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{productset}]{\setlength{\rightskip}{0pt plus 5cm}set$<${\bf \-Modul}$\ast$$>$ {\bf \-Timer\-Pool\-Producer\-::productset}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a8f115a7a158c1a87b7c0b69979056a58}
+
+
+\-Definition at line 76 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\-Referenced by attach(), detach(), \-Loop\-Timer(), and \-Notify().
+
+\hypertarget{classTimerPoolProducer_a1c409ced920df021ed0d05965a42283d}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!threadgroup@{threadgroup}}
+\index{threadgroup@{threadgroup}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{threadgroup}]{\setlength{\rightskip}{0pt plus 5cm}boost\-::thread\-\_\-group {\bf \-Timer\-Pool\-Producer\-::threadgroup}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a1c409ced920df021ed0d05965a42283d}
+
+
+\-Definition at line 81 of file \-Timer\-Pool\-Producer.\-h.
+
+\hypertarget{classTimerPoolProducer_a2c4d13b344f41f350c195a113ed59d7a}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Threadlist@{\-Threadlist}}
+\index{\-Threadlist@{\-Threadlist}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Threadlist}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int,boost\-::shared\-\_\-ptr$<$boost\-::thread$>$ $>$ {\bf \-Timer\-Pool\-Producer\-::\-Threadlist}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a2c4d13b344f41f350c195a113ed59d7a}
+
+
+\-Definition at line 86 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\-Referenced by \-Add\-Timer(), and \-Stop\-Timer().
+
+\hypertarget{classTimerPoolProducer_a5d112fbb99940e2e38d94ece39878cbd}{\index{\-Timer\-Pool\-Producer@{\-Timer\-Pool\-Producer}!\-Timer\-Threadmap@{\-Timer\-Threadmap}}
+\index{\-Timer\-Threadmap@{\-Timer\-Threadmap}!TimerPoolProducer@{\-Timer\-Pool\-Producer}}
+\subsubsection[{\-Timer\-Threadmap}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$boost\-::thread\-::id,boost\-::shared\-\_\-ptr$<$boost\-::thread$>$ $>$ {\bf \-Timer\-Pool\-Producer\-::\-Timer\-Threadmap}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classTimerPoolProducer_a5d112fbb99940e2e38d94ece39878cbd}
+
+
+\-Definition at line 90 of file \-Timer\-Pool\-Producer.\-h.
+
+
+
+\-Referenced by \-Add\-Timer\-Thread(), \-Stop\-All\-Timer\-Thread(), and \-Stop\-One\-Timer\-Thread().
+
+
+
+\-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\-Modul/\hyperlink{TimerPoolProducer_8h}{\-Timer\-Pool\-Producer.\-h}\item 
+\-Modul/\hyperlink{TimerPoolProducer_8cpp}{\-Timer\-Pool\-Producer.\-cpp}\end{DoxyCompactItemize}

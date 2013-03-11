@@ -1,0 +1,155 @@
+\hypertarget{classSynchronisedQueue}{\section{\-Synchronised\-Queue$<$ \-T $>$ \-Class \-Template \-Reference}
+\label{classSynchronisedQueue}\index{\-Synchronised\-Queue$<$ T $>$@{\-Synchronised\-Queue$<$ T $>$}}
+}
+
+
+{\ttfamily \#include $<$\-Synchronised\-Queue.\-h$>$}
+
+\subsection*{\-Public \-Member \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSynchronisedQueue_af19aaa5e55bdcf1235f9fec42b8bd100}{\-Synchronised\-Queue} ()
+\item 
+void \hyperlink{classSynchronisedQueue_a57ab290483acce1df774ab57515c6fea}{\-Enqueue} (const \-T \&data)
+\item 
+\-T \hyperlink{classSynchronisedQueue_a9872d0bff96d46f32fe131454d17f1db}{\-Dequeue} ()
+\item 
+int \hyperlink{classSynchronisedQueue_ae1826dd6d56a0b1e07caed3a1215cd5a}{\-Size} ()
+\item 
+void \hyperlink{classSynchronisedQueue_aaf9850472417493364e6349f17558fac}{\-Stop\-Queue} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Private \-Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::queue$<$ \-T $>$ \hyperlink{classSynchronisedQueue_a838ae9b5d2b5ce8dd901aa7a03c79861}{m\-\_\-queue}
+\item 
+boost\-::mutex \hyperlink{classSynchronisedQueue_a94b11f8a9abb258e72162cc0988458ef}{m\-\_\-mutex}
+\item 
+boost\-::condition\-\_\-variable \hyperlink{classSynchronisedQueue_a9561fdd948fc105f361af18b1f58e875}{m\-\_\-cond}
+\item 
+bool \hyperlink{classSynchronisedQueue_af7a6fdab054a96999a930575cd62928f}{\-Request\-To\-End}
+\item 
+bool \hyperlink{classSynchronisedQueue_af6fe02819110807b9c562da12d19763b}{\-Enqueue\-Data}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\subsubsection*{template$<$typename \-T$>$class Synchronised\-Queue$<$ T $>$}
+
+
+
+\-Definition at line 15 of file \-Synchronised\-Queue.\-h.
+
+
+
+\subsection{\-Constructor \& \-Destructor \-Documentation}
+\hypertarget{classSynchronisedQueue_af19aaa5e55bdcf1235f9fec42b8bd100}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Synchronised\-Queue@{\-Synchronised\-Queue}}
+\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Synchronised\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Synchronised\-Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classSynchronisedQueue_af19aaa5e55bdcf1235f9fec42b8bd100}
+
+
+\-Definition at line 19 of file \-Synchronised\-Queue.\-h.
+
+
+
+\subsection{\-Member \-Function \-Documentation}
+\hypertarget{classSynchronisedQueue_a9872d0bff96d46f32fe131454d17f1db}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Dequeue@{\-Dequeue}}
+\index{\-Dequeue@{\-Dequeue}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Dequeue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ \-T {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Dequeue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classSynchronisedQueue_a9872d0bff96d46f32fe131454d17f1db}
+
+
+\-Definition at line 42 of file \-Synchronised\-Queue.\-h.
+
+\hypertarget{classSynchronisedQueue_a57ab290483acce1df774ab57515c6fea}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Enqueue@{\-Enqueue}}
+\index{\-Enqueue@{\-Enqueue}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Enqueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ void {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Enqueue} (
+\begin{DoxyParamCaption}
+\item[{const \-T \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classSynchronisedQueue_a57ab290483acce1df774ab57515c6fea}
+
+
+\-Definition at line 26 of file \-Synchronised\-Queue.\-h.
+
+
+
+\-Referenced by \-Timer\-Pool\-Producer\-::\-Loop\-Timer().
+
+
+
+\-Here is the caller graph for this function\-:
+
+
+\hypertarget{classSynchronisedQueue_ae1826dd6d56a0b1e07caed3a1215cd5a}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Size@{\-Size}}
+\index{\-Size@{\-Size}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ int {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Size} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classSynchronisedQueue_ae1826dd6d56a0b1e07caed3a1215cd5a}
+
+
+\-Definition at line 63 of file \-Synchronised\-Queue.\-h.
+
+\hypertarget{classSynchronisedQueue_aaf9850472417493364e6349f17558fac}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Stop\-Queue@{\-Stop\-Queue}}
+\index{\-Stop\-Queue@{\-Stop\-Queue}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Stop\-Queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ void {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Stop\-Queue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{classSynchronisedQueue_aaf9850472417493364e6349f17558fac}
+
+
+\-Definition at line 69 of file \-Synchronised\-Queue.\-h.
+
+
+
+\subsection{\-Member \-Data \-Documentation}
+\hypertarget{classSynchronisedQueue_af6fe02819110807b9c562da12d19763b}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Enqueue\-Data@{\-Enqueue\-Data}}
+\index{\-Enqueue\-Data@{\-Enqueue\-Data}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Enqueue\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ bool {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Enqueue\-Data}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classSynchronisedQueue_af6fe02819110807b9c562da12d19763b}
+
+
+\-Definition at line 81 of file \-Synchronised\-Queue.\-h.
+
+\hypertarget{classSynchronisedQueue_a9561fdd948fc105f361af18b1f58e875}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!m\-\_\-cond@{m\-\_\-cond}}
+\index{m\-\_\-cond@{m\-\_\-cond}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{m\-\_\-cond}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ boost\-::condition\-\_\-variable {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf m\-\_\-cond}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classSynchronisedQueue_a9561fdd948fc105f361af18b1f58e875}
+
+
+\-Definition at line 79 of file \-Synchronised\-Queue.\-h.
+
+\hypertarget{classSynchronisedQueue_a94b11f8a9abb258e72162cc0988458ef}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!m\-\_\-mutex@{m\-\_\-mutex}}
+\index{m\-\_\-mutex@{m\-\_\-mutex}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{m\-\_\-mutex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ boost\-::mutex {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf m\-\_\-mutex}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classSynchronisedQueue_a94b11f8a9abb258e72162cc0988458ef}
+
+
+\-Definition at line 78 of file \-Synchronised\-Queue.\-h.
+
+\hypertarget{classSynchronisedQueue_a838ae9b5d2b5ce8dd901aa7a03c79861}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!m\-\_\-queue@{m\-\_\-queue}}
+\index{m\-\_\-queue@{m\-\_\-queue}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{m\-\_\-queue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ std\-::queue$<$\-T$>$ {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf m\-\_\-queue}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classSynchronisedQueue_a838ae9b5d2b5ce8dd901aa7a03c79861}
+
+
+\-Definition at line 77 of file \-Synchronised\-Queue.\-h.
+
+\hypertarget{classSynchronisedQueue_af7a6fdab054a96999a930575cd62928f}{\index{\-Synchronised\-Queue@{\-Synchronised\-Queue}!\-Request\-To\-End@{\-Request\-To\-End}}
+\index{\-Request\-To\-End@{\-Request\-To\-End}!SynchronisedQueue@{\-Synchronised\-Queue}}
+\subsubsection[{\-Request\-To\-End}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \-T$>$ bool {\bf \-Synchronised\-Queue}$<$ \-T $>$\-::{\bf \-Request\-To\-End}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}\label{classSynchronisedQueue_af7a6fdab054a96999a930575cd62928f}
+
+
+\-Definition at line 80 of file \-Synchronised\-Queue.\-h.
+
+
+
+\-The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\-Modul/\hyperlink{SynchronisedQueue_8h}{\-Synchronised\-Queue.\-h}\end{DoxyCompactItemize}
